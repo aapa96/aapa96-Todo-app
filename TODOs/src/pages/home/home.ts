@@ -51,7 +51,6 @@ export class HomePage {
           text: 'Ok',
           handler: () => {
             this.deleteTodo(id);
-            this.getTodo();
           }
         }
       ]
@@ -77,7 +76,7 @@ export class HomePage {
     this.todoService.deleteTodo(id)
     .subscribe(
       (data) => { // Success
-        console.log(data);
+            this.getTodo();
       },
       (error) =>{
         console.error(error);
